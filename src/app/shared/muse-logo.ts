@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 
-/** The MUSE mark: the round panel with the GPS cursor from the printed face. */
+/** The MUSE mark: the black panel lit up, with the route, the arrow and the destination. Same drawing as the favicon. */
 @Component({
   selector: 'app-muse-logo',
   template: `
@@ -12,20 +12,27 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
       aria-label="MUSE"
       class="logo"
     >
-      <rect width="64" height="64" rx="18" class="logo__bg" />
-      <circle
-        cx="32"
-        cy="32"
-        r="19"
+      <rect width="64" height="64" rx="16" class="logo__bg" />
+      <circle cx="32" cy="32" r="25" class="logo__bezel" />
+      <circle cx="32" cy="32" r="22" class="logo__glass" />
+      <path
+        d="M32 37V26q0-7 7-7h11"
         fill="none"
-        class="logo__ring"
-        stroke-width="4"
+        class="logo__route"
+        stroke-width="6"
         stroke-linecap="round"
-        stroke-dasharray="86 34"
-        transform="rotate(120 32 32)"
+        stroke-linejoin="round"
       />
-      <path d="M32 18 L41 40 L32 35 L23 40 Z" class="logo__cursor" />
-      <circle cx="32" cy="32" r="2.5" class="logo__dot" />
+      <path
+        d="M32 37V26q0-7 7-7h11"
+        fill="none"
+        class="logo__route-light"
+        stroke-width="2.4"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <circle cx="50" cy="19" r="4.5" class="logo__dot" />
+      <path d="M32 34l9 17-9-5-9 5z" class="logo__cursor" />
     </svg>
   `,
   styles: `
@@ -35,9 +42,20 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
     .logo__bg {
       fill: var(--ink);
     }
-    .logo__ring {
+    .logo__bezel {
+      fill: #111827;
+    }
+    .logo__glass {
+      fill: #0b1220;
+      stroke: #334155;
+      stroke-width: 1.5;
+    }
+    .logo__route {
       stroke: var(--sky);
       transition: stroke var(--dur) var(--ease-spring);
+    }
+    .logo__route-light {
+      stroke: #93c5fd;
     }
     .logo__cursor {
       fill: #ffffff;
@@ -45,8 +63,8 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
     .logo__dot {
       fill: var(--sun);
     }
-    :host-context(a:hover) .logo__ring,
-    :host-context(a:focus-visible) .logo__ring {
+    :host-context(a:hover) .logo__route,
+    :host-context(a:focus-visible) .logo__route {
       stroke: var(--sky-bright);
     }
   `,

@@ -57,10 +57,16 @@
     transform var(--dur) var(--ease-spring);
 }
 
-.scenario:hover {
+.scenario:hover:not(.scenario--active) {
   border-color: var(--sky-bright);
   color: var(--sky-deep);
   transform: translateY(-2px);
+}
+
+.scenario--active:hover {
+  background: var(--sky-deeper);
+  border-color: var(--sky-deeper);
+  color: #fff;
 }
 
 .scenario--active {
