@@ -1,0 +1,69 @@
+<section class="hero" id="inicio">
+  <div class="hero__glow hero__glow--sky" aria-hidden="true"></div>
+  <div class="hero__glow hero__glow--sun" aria-hidden="true"></div>
+
+  <div class="container hero__grid">
+    <div class="hero__copy">
+      <p class="hero__eyebrow" appReveal>
+        <app-icon name="sparkle" [size]="18" />
+        App Android + painel no guidão
+      </p>
+      <h1 appReveal="80">
+        O celular pensa.<br />
+        <span class="hero__accent">O painel desenha.</span>
+      </h1>
+      <p class="hero__lead" appReveal="160">
+        O MUSE transforma o seu Android no cérebro de um painel no guidão da moto: navegação por
+        manobras, velocímetro com o limite da via, radares, lombadas e clima no trajeto. Tudo por
+        Bluetooth, e funcionando sem internet.
+      </p>
+
+      <div class="hero__actions" appReveal="240">
+        <app-download-button />
+        <a href="#como-funciona" class="hero__secondary">
+          Ver como funciona
+          <app-icon name="arrow" [size]="20" />
+        </a>
+      </div>
+
+      <ul class="hero__trust" appReveal="320" aria-label="O que você precisa saber">
+        <li><app-icon name="check" [size]="18" /> Grátis e sem anúncios</li>
+        <li><app-icon name="check" [size]="18" /> Atualiza sozinho</li>
+        <li><app-icon name="check" [size]="18" /> Dados do Brasil inteiro</li>
+        <li><app-icon name="check" [size]="18" /> Android 8 ou mais novo</li>
+      </ul>
+    </div>
+
+    <div class="hero__visual" appReveal="200">
+      <div class="hero__phone">
+        <app-phone-frame [shots]="shots" [active]="activeShot()" [width]="300" [priority]="true" />
+        <div class="hero__dots" aria-label="Telas do app">
+          @for (shot of shots; track shot.src; let i = $index) {
+            <button
+              type="button"
+              class="hero__dot"
+              [class.hero__dot--active]="i === activeShot()"
+              [attr.aria-pressed]="i === activeShot()"
+              [attr.aria-label]="shot.alt"
+              (click)="selectShot(i)"
+            ></button>
+          }
+        </div>
+      </div>
+
+      <div class="hero__link" aria-hidden="true">
+        <span class="hero__pulse"></span>
+        <span class="hero__pulse hero__pulse--late"></span>
+        <app-icon name="bluetooth" [size]="22" />
+      </div>
+
+      <div class="hero__panel">
+        <app-panel-dial
+          scenario="route"
+          label="Painel MUSE mostrando a navegação: 50 km/h, vire à direita em 280 metros"
+        />
+        <span class="hero__panel-tag mono">O painel no guidão</span>
+      </div>
+    </div>
+  </div>
+</section>

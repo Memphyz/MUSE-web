@@ -1,0 +1,105 @@
+<section class="section panel-section" id="painel">
+  <div class="container">
+    <header class="section-heading" appReveal>
+      <span class="eyebrow"><app-icon name="display" [size]="18" /> O painel</span>
+      <h2>Uma tela redonda que só mostra o que importa</h2>
+      <p>
+        Mapa visto de cima na parte de cima, velocímetro, manobra e distância embaixo. Em preto e
+        branco de propósito, para o olho achar a informação em um relance, mesmo com sol na tela.
+        Toque num cenário para ver o painel reagir.
+      </p>
+    </header>
+
+    <div class="demo">
+      <div class="demo__dial" appReveal="100">
+        <app-panel-dial
+          [scenario]="active().id"
+          [label]="'Painel MUSE no cenário ' + active().label"
+        />
+      </div>
+
+      <div class="demo__controls" appReveal="200">
+        <div class="scenarios" aria-label="Cenários do painel">
+          @for (scenario of scenarios; track scenario.id) {
+            <button
+              type="button"
+              class="scenario"
+              [class.scenario--active]="scenario.id === active().id"
+              [attr.aria-pressed]="scenario.id === active().id"
+              (click)="select(scenario)"
+            >
+              {{ scenario.label }}
+            </button>
+          }
+        </div>
+        <p class="caption" aria-live="polite">{{ active().caption }}</p>
+
+        <ul class="specs">
+          <li>
+            <app-icon name="display" [size]="22" />
+            <span
+              ><strong>Tela redonda</strong> nítida, do tamanho de um relógio, que se lê de
+              relance</span
+            >
+          </li>
+          <li>
+            <app-icon name="bolt" [size]="22" />
+            <span
+              ><strong>Liga na chave da moto</strong> e dorme em segundos quando a ignição
+              desliga</span
+            >
+          </li>
+          <li>
+            <app-icon name="key" [size]="22" />
+            <span
+              ><strong>Pareia com um código</strong> que aparece na tela, e lembra do seu celular
+              nas próximas vezes</span
+            >
+          </li>
+          <li>
+            <app-icon name="moon" [size]="22" />
+            <span><strong>Tema claro ou escuro</strong> por horário, escolhido no app</span>
+          </li>
+          <li>
+            <app-icon name="update" [size]="22" />
+            <span
+              ><strong>Se atualiza pelo app</strong>, por Bluetooth, com o que mudou na tela antes
+              de instalar</span
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="hardware">
+      <div class="hardware__figure" appReveal>
+        <app-case-showcase
+          view="front"
+          scenario="route"
+          alt="Carcaça preta do MUSE vista de frente, com o painel ligado mostrando a navegação"
+        />
+      </div>
+      <div class="hardware__copy" appReveal="120">
+        <span class="hardware__eyebrow"><app-icon name="print" [size]="18" /> A carcaça</span>
+        <h3>Impressa em 3D, feita para o lugar do acessório original</h3>
+        <p>
+          A carcaça vai no mesmo suporte e no mesmo conector do painel que vem de fábrica na moto:
+          nada de furar guidão nem de fio solto. É selada contra chuva, troca de fusível pela
+          frente, e a tela fica quase colada na película, sem efeito de túnel.
+        </p>
+        <ul class="hardware__facts">
+          <li><strong>80 mm</strong> de diâmetro</li>
+          <li><strong>2 parafusos</strong>, os mesmos da moto</li>
+          <li><strong>Todo preto</strong>, com relevo na frente</li>
+        </ul>
+      </div>
+      <div class="hardware__figure hardware__figure--front" appReveal="240">
+        <app-case-showcase
+          view="three-quarter"
+          scenario="radar"
+          alt="Carcaça preta do MUSE em três quartos, com o painel avisando um radar à frente"
+        />
+      </div>
+    </div>
+  </div>
+</section>
