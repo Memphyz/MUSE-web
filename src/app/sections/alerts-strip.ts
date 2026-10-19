@@ -11,16 +11,16 @@ interface Alert {
 /** The 18 alert types the app knows, with the very icons the panel draws. */
 const ALERTS: readonly Alert[] = [
   { icon: 'alert_speed_radar', label: 'Radar de velocidade' },
-  { icon: 'alert_red_light_radar', label: 'Radar semafórico' },
+  { icon: 'alert_red_light_radar', label: 'Radar de avanço de sinal' },
   { icon: 'alert_surveillance_camera', label: 'Câmera de monitoramento' },
   { icon: 'alert_speed_bump', label: 'Lombada' },
-  { icon: 'alert_raised_crossing', label: 'Travessia elevada' },
+  { icon: 'alert_raised_crossing', label: 'Faixa elevada' },
   { icon: 'alert_toll', label: 'Pedágio' },
   { icon: 'alert_free_flow', label: 'Pedágio sem cancela' },
   { icon: 'alert_traffic_signals', label: 'Semáforo' },
   { icon: 'alert_stop', label: 'PARE' },
   { icon: 'alert_give_way', label: 'Dê a preferência' },
-  { icon: 'alert_level_crossing', label: 'Cruzamento de trem' },
+  { icon: 'alert_level_crossing', label: 'Passagem de trem' },
   { icon: 'alert_accidents', label: 'Trecho com acidentes' },
   { icon: 'alert_sharp_curve', label: 'Curva fechada' },
   { icon: 'alert_obstacle', label: 'Obstáculo na via' },
@@ -38,8 +38,8 @@ const ALERTS: readonly Alert[] = [
       <div class="container strip__head" appReveal>
         <h2 id="alerts-title">Os 18 avisos que o painel conhece</h2>
         <p>
-          Os mesmos ícones que o app desenha no mapa vão para o guidão, no ponto exato da rota.
-          Nunca só a cor: sempre o desenho e a distância.
+          Os mesmos ícones que aparecem no mapa do app aparecem no painel, no ponto certo da rota,
+          sempre com a distância até eles.
         </p>
       </div>
 

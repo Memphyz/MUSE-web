@@ -20,20 +20,20 @@ const STEPS: readonly Step[] = [
   {
     icon: 'bluetooth',
     title: 'O Bluetooth leva o recado',
-    text: 'O celular manda só o que o painel precisa mostrar: velocidade, próxima manobra, ruas em volta, avisos, chegada e hora. Nada de senha nem de app de terceiros.',
-    detail: 'Bluetooth · pareia uma vez',
+    text: 'O celular manda só o que o painel precisa mostrar: velocidade, próxima curva, ruas em volta, avisos e hora de chegada. Sem precisar de nenhum outro app.',
+    detail: 'Bluetooth · conecta uma vez',
   },
   {
     icon: 'display',
     title: 'O painel desenha',
-    text: 'Uma tela redonda no guidão que desenha o que chega, sem travar e sem distrair. O painel não guarda sua posição e não precisa de internet.',
+    text: 'Uma tela redonda no guidão mostra o que o celular manda, sem travar e sem distrair. O painel não guarda por onde você andou e não precisa de internet.',
     detail: 'Tela redonda · liga com a chave',
   },
   {
     icon: 'print',
     title: 'A carcaça segura tudo',
-    text: 'Impressa em 3D, no mesmo suporte e no mesmo conector do acessório original da moto. Liga na chave e dorme quando a ignição desliga.',
-    detail: 'Impressão 3D · encaixe original',
+    text: 'Impressa em 3D, vai no mesmo lugar e na mesma tomada do painel que vem de fábrica na moto. Liga com a chave e desliga sozinha junto com a moto.',
+    detail: 'Impressão 3D · encaixe de fábrica',
   },
 ];
 
@@ -47,8 +47,9 @@ const STEPS: readonly Step[] = [
           <span class="eyebrow"><app-icon name="route" [size]="18" /> Como funciona</span>
           <h2>Quatro peças, um só caminho</h2>
           <p>
-            O MUSE separa quem pensa de quem mostra. Por isso o painel gasta pouca bateria, a lógica
-            melhora a cada versão do app, e a moto nunca precisa voltar para a bancada.
+            O celular faz as contas e o painel só mostra o resultado. Por isso o painel gasta pouca
+            energia, ganha recursos novos a cada versão do app e nunca precisa ser desmontado para
+            atualizar.
           </p>
         </header>
 

@@ -15,7 +15,7 @@ import { Icon } from '../shared/icon';
         <div class="card" appReveal>
           <div class="card__copy">
             <span class="card__eyebrow"><app-icon name="install" [size]="18" /> Baixar</span>
-            <h2>Pronto para o guidão?</h2>
+            <h2>Bora rodar?</h2>
             <p class="card__lead">
               O botão baixa direto a versão mais nova publicada. Depois da primeira instalação, o
               app se atualiza sozinho: você nunca mais volta aqui, a não ser para mostrar para um
@@ -67,16 +67,18 @@ import { Icon } from '../shared/icon';
                 <div>
                   <strong>Permita a instalação</strong>
                   <p>
-                    Na primeira vez, o Android pede para permitir apps desta origem. É só aceitar.
+                    Na primeira vez, o Android pergunta se pode instalar apps vindos do navegador. É
+                    só aceitar.
                   </p>
                 </div>
               </li>
               <li>
                 <span class="steps__number mono">3</span>
                 <div>
-                  <strong>Abra e pareie o painel</strong>
+                  <strong>Abra o app e conecte o painel</strong>
                   <p>
-                    Ligue a moto, digite o código de 6 dígitos que aparece na tela, e boa viagem.
+                    Ligue a moto, digite no app o código de 6 dígitos que aparece no painel, e boa
+                    viagem.
                   </p>
                 </div>
               </li>
@@ -90,7 +92,9 @@ import { Icon } from '../shared/icon';
 
             <p class="fallback">
               Prefere ver todas as versões?
-              <a [href]="releasesPage" target="_blank" rel="noopener">Abra a release no GitHub</a>.
+              <a [href]="releasesPage" target="_blank" rel="noopener"
+                >Abra a página de versões no GitHub</a
+              >.
             </p>
           </div>
         </div>

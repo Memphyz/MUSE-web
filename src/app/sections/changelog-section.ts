@@ -20,10 +20,10 @@ const GROUP_ICONS: Record<ChangelogGroupName, string> = {
       <div class="container">
         <header class="section-heading" appReveal>
           <span class="eyebrow"><app-icon name="update" [size]="18" /> Novidades</span>
-          <h2>O que mudou, direto da release</h2>
+          <h2>O que mudou nas últimas versões</h2>
           <p>
-            Esta lista é lida ao vivo da mesma publicação que o app usa para se atualizar. O que
-            você lê aqui é o que o piloto lê no celular antes de instalar.
+            Esta lista vem do mesmo lugar de onde o app baixa as atualizações. É o que você vê no
+            celular antes de instalar uma versão nova.
           </p>
         </header>
 
@@ -38,9 +38,7 @@ const GROUP_ICONS: Record<ChangelogGroupName, string> = {
           </span>
           <span class="badge badge--source" [class.badge--live]="release.app().source === 'live'">
             <span class="badge__dot"></span>
-            {{
-              release.app().source === 'live' ? 'Ao vivo do GitHub' : 'Último registro conhecido'
-            }}
+            {{ release.app().source === 'live' ? 'Atualizado agora' : 'Última versão conhecida' }}
           </span>
         </div>
 

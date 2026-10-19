@@ -17,31 +17,31 @@ const SCENARIOS: readonly Scenario[] = [
     id: 'route',
     label: 'Navegando',
     caption:
-      'A rota em branco, as ruas em volta em cinza, a seta fixa no centro e a próxima manobra com a distância em números grandes.',
+      'A rota em branco, as ruas em volta em cinza, a seta fixa no centro e a próxima curva com a distância em números grandes.',
   },
   {
     id: 'radar',
     label: 'Radar à frente',
     caption:
-      'O radar aparece sobre a rota no ponto exato. Acima do limite, o número fica vermelho e a placa do limite sobe no anel.',
+      'O radar aparece sobre a rota no ponto exato. Acima do limite, a velocidade fica vermelha e a placa do limite aparece ao lado.',
   },
   {
     id: 'bump',
     label: 'Lombada',
     caption:
-      'Lombadas, travessias e obstáculos chegam com o mesmo ícone do app, se aproximando conforme a moto anda.',
+      'Lombadas, faixas elevadas e obstáculos aparecem com o mesmo ícone do app e vão se aproximando conforme a moto anda.',
   },
   {
     id: 'rain',
     label: 'Chuva',
     caption:
-      'O clima do trajeto avisa a distância até a chuva, e a pista escorregadia entra na fila de eventos da rota.',
+      'O painel avisa a quantos quilômetros está a chuva, e o aviso de pista escorregadia entra na rota como qualquer outro.',
   },
   {
     id: 'tunnel',
     label: 'Túnel',
     caption:
-      'O que é estado da via embaixo da roda vira um chip no topo: túnel, piso solto, rampa, ponte.',
+      'O que está embaixo da roda aparece no alto da tela: túnel, estrada de terra, pista molhada.',
   },
   {
     id: 'night',

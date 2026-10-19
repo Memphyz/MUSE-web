@@ -26,7 +26,7 @@ import { MuseLogo } from '../shared/muse-logo';
           <a href="#novidades">Novidades</a>
           <a href="#baixar">Baixar</a>
           <a [href]="releasesPage" target="_blank" rel="noopener">
-            <app-icon name="github" [size]="18" /> Releases
+            <app-icon name="github" [size]="18" /> Todas as versões
           </a>
         </nav>
 

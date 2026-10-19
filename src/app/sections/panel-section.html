@@ -4,9 +4,9 @@
       <span class="eyebrow"><app-icon name="display" [size]="18" /> O painel</span>
       <h2>Uma tela redonda que só mostra o que importa</h2>
       <p>
-        Mapa visto de cima na parte de cima, velocímetro, manobra e distância embaixo. Em preto e
-        branco de propósito, para o olho achar a informação em um relance, mesmo com sol na tela.
-        Toque num cenário para ver o painel reagir.
+        O mapa em cima; a velocidade, a próxima curva e a distância embaixo. Em preto e branco de
+        propósito, para ler de relance mesmo com sol na tela. Toque numa situação para ver o painel
+        reagir.
       </p>
     </header>
 
@@ -19,7 +19,7 @@
       </div>
 
       <div class="demo__controls" appReveal="200">
-        <div class="scenarios" aria-label="Cenários do painel">
+        <div class="scenarios" aria-label="Situações do painel">
           @for (scenario of scenarios; track scenario.id) {
             <button
               type="button"
@@ -44,16 +44,13 @@
           </li>
           <li>
             <app-icon name="bolt" [size]="22" />
-            <span
-              ><strong>Liga na chave da moto</strong> e dorme em segundos quando a ignição
-              desliga</span
-            >
+            <span><strong>Liga na chave da moto</strong> e desliga sozinho junto com ela</span>
           </li>
           <li>
-            <app-icon name="key" [size]="22" />
+            <app-icon name="link" [size]="22" />
             <span
-              ><strong>Pareia com um código</strong> que aparece na tela, e lembra do seu celular
-              nas próximas vezes</span
+              ><strong>Conecta com um código</strong> na primeira vez. Depois, reconhece o seu
+              celular sozinho</span
             >
           </li>
           <li>
@@ -63,7 +60,7 @@
           <li>
             <app-icon name="update" [size]="22" />
             <span
-              ><strong>Se atualiza pelo app</strong>, por Bluetooth, com o que mudou na tela antes
+              ><strong>Se atualiza pelo app</strong>, sem cabo, mostrando na tela o que mudou antes
               de instalar</span
             >
           </li>
@@ -81,11 +78,11 @@
       </div>
       <div class="hardware__copy" appReveal="120">
         <span class="hardware__eyebrow"><app-icon name="print" [size]="18" /> A carcaça</span>
-        <h3>Impressa em 3D, feita para o lugar do acessório original</h3>
+        <h3>Feita para o lugar do painel original da moto</h3>
         <p>
-          A carcaça vai no mesmo suporte e no mesmo conector do painel que vem de fábrica na moto:
-          nada de furar guidão nem de fio solto. É selada contra chuva, troca de fusível pela
-          frente, e a tela fica quase colada na película, sem efeito de túnel.
+          A carcaça, impressa em 3D, vai no mesmo suporte e na mesma tomada do painel que vem de
+          fábrica na moto: nada de furar guidão nem de fio solto. É fechada contra chuva, e a tela
+          fica rente ao vidro, fácil de ler de qualquer ângulo.
         </p>
         <ul class="hardware__facts">
           <li><strong>80 mm</strong> de diâmetro</li>

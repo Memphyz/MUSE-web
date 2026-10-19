@@ -15,10 +15,9 @@ import { Icon } from '../shared/icon';
             <span class="eyebrow"><app-icon name="offline" [size]="18" /> Sem internet</span>
             <h2>O Brasil inteiro cabe no seu celular</h2>
             <p>
-              Todo dia às cinco da manhã, um robô junta o OpenStreetMap, a ANTT, a PRF, o DNIT e o
-              IBGE num pacote por estado. O app baixa sozinho o seu estado e os de cada rota que
-              você inicia. Na estrada sem sinal, a rota, o limite da via e os avisos continuam
-              funcionando.
+              Os mapas e os avisos de cada estado são montados todo dia a partir de fontes públicas.
+              O app baixa sozinho o seu estado e os de cada rota que você traça. Na estrada sem
+              sinal, a rota, o limite da via e os avisos continuam funcionando.
             </p>
             <ul class="sources" aria-label="Fontes dos dados">
               <li>OpenStreetMap</li>
@@ -34,7 +33,7 @@ import { Icon } from '../shared/icon';
           <ul class="stats">
             <li class="stat" appReveal="0">
               <span class="stat__value"><app-count-up [value]="27" /></span>
-              <span class="stat__label">estados, cada um com os próprios alertas e vias</span>
+              <span class="stat__label">estados, cada um com os próprios mapas e avisos</span>
             </li>
             <li class="stat" appReveal="100">
               <span class="stat__value"><app-count-up [value]="18" /></span>
@@ -42,16 +41,19 @@ import { Icon } from '../shared/icon';
             </li>
             <li class="stat" appReveal="200">
               <span class="stat__value"><app-count-up [value]="7" suffix=" MB" /></span>
-              <span class="stat__label">de alertas para o país inteiro, atualizados todo dia</span>
+              <span class="stat__label">de avisos para o país inteiro, atualizados todo dia</span>
             </li>
             <li class="stat" appReveal="300">
               <span class="stat__value"><app-count-up [value]="400" suffix=" MB" /></span>
-              <span class="stat__label">de vias com limite e piso, atualizadas todo mês</span>
+              <span class="stat__label"
+                >de mapas com o limite de cada via, atualizados todo mês</span
+              >
             </li>
             <li class="stat stat--wide" appReveal="400">
-              <span class="stat__value mono">05:00</span>
+              <span class="stat__value mono">0</span>
               <span class="stat__label"
-                >a hora em que os dados do dia ficam prontos, de segunda a domingo</span
+                >toques para atualizar: o app baixa os dados novos sozinho, sem você fazer
+                nada</span
               >
             </li>
           </ul>
