@@ -11,66 +11,97 @@ export const RELEASES_PAGE = `https://github.com/${RELEASES_REPO}/releases/tag/a
  * so the download button never depends on the API being reachable.
  */
 export const APP_SNAPSHOT: AppRelease = {
-  version: '1.14.2',
-  file: 'muse-app-1.14.2.apk',
-  url: `${RELEASES_DOWNLOAD}/app/muse-app-1.14.2.apk`,
-  sizeBytes: 9519424,
-  publishedAt: '2026-10-14T12:25:48Z',
+  version: '1.18.0',
+  file: 'muse-app-1.18.0.apk',
+  url: `${RELEASES_DOWNLOAD}/app/muse-app-1.18.0.apk`,
+  sizeBytes: 9640976,
+  publishedAt: '2026-10-16T19:33:15Z',
   totalDownloads: 0,
   source: 'snapshot',
   changelog: [
     {
-      version: '1.14.2',
-      date: '2026-10-14',
-      groups: [
-        {
-          name: 'Correções',
-          items: [
-            {
-              title: 'Tema claro que não escurece sozinho',
-              text: 'com o celular no modo escuro e o app no Claro, as telas às vezes passavam a abrir escuras depois de o app voltar do segundo plano. Agora o tema escolhido vale desde a abertura e não se perde.',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      version: '1.14.0',
-      date: '2026-10-13',
-      groups: [
-        {
-          name: 'Melhorias',
-          items: [
-            {
-              title: 'Chegada que conhece o tipo de via',
-              text: 'o app agora aprende o seu ritmo separado na cidade, na estrada e na rodovia.',
-            },
-            {
-              title: 'O trânsito de todo dia agora conta',
-              text: 'o app vê o trânsito inteiro da rota, e é nele que o corredor e a faixa azul fazem diferença.',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      version: '1.13.0',
-      date: '2026-10-13',
+      version: '1.18.0',
+      date: '2026-10-16',
       groups: [
         {
           name: 'Novidades',
           items: [
             {
-              title: 'Pedágio sem cancela',
-              text: 'o pórtico que cobra pela placa agora tem ícone próprio no mapa, na rota e no painel, com lembrete do prazo de pagamento.',
+              title: 'Tela acesa na rota',
+              text: 'navegando, a tela do celular não apaga mais sozinha, e o app aparece por cima da tela de bloqueio sem pedir senha.',
             },
             {
-              title: 'Avisos oficiais do INMET',
-              text: 'o "Clima no trajeto" mostra os avisos meteorológicos oficiais que cobrem a rota, e o painel mostra "ALERTA" ao entrar na área.',
+              title: 'Bipe acima do limite',
+              text: 'o app toca um bipe quando você passa do limite da via, uma vez só. Dá para desligar em Ajustes > Alertas.',
             },
             {
-              title: 'Girar o mapa com dois dedos',
-              text: 'torça os dedos sobre o mapa, como no Google Maps; com o mapa girado aparece a bússola.',
+              title: 'Mapa escuro à noite',
+              text: 'navegando à noite, o mapa escurece sozinho, mesmo com o celular no tema claro.',
+            },
+          ],
+        },
+        {
+          name: 'Melhorias',
+          items: [
+            {
+              title: 'Menos bateria e menos calor',
+              text: 'o mapa da navegação desenha menos vezes por segundo e para de redesenhar com a moto parada.',
+            },
+            {
+              title: 'A rota não fecha por engano',
+              text: 'o gesto de voltar minimiza o app em vez de fechá-lo. Para encerrar, use o botão da tela ou o da notificação.',
+            },
+          ],
+        },
+      ],
+    },
+    {
+      version: '1.17.0',
+      date: '2026-10-16',
+      groups: [
+        {
+          name: 'Novidades',
+          items: [
+            {
+              title: 'Avisos sonoros',
+              text: 'navegando, o app toca um som ao chegar perto de um radar, de um perigo na via ou de uma lombada da sua rota. O som sai no fone ou no intercomunicador.',
+            },
+          ],
+        },
+        {
+          name: 'Melhorias',
+          items: [
+            {
+              title: 'Limite da via mais certo',
+              text: 'com o trânsito ligado, o velocímetro usa o limite que o serviço de trânsito conhece para cada trecho da rota.',
+            },
+          ],
+        },
+      ],
+    },
+    {
+      version: '1.16.0',
+      date: '2026-10-15',
+      groups: [
+        {
+          name: 'Novidades',
+          items: [
+            {
+              title: 'Bateria do celular no painel',
+              text: 'o painel mostra o nível da bateria do celular ao lado da hora de chegada. Fica âmbar com a bateria baixa e vermelha abaixo de 15%.',
+            },
+          ],
+        },
+        {
+          name: 'Melhorias',
+          items: [
+            {
+              title: 'Seta que acompanha a moto',
+              text: 'a seta e o mapa andavam um pouco atrás da moto. Agora a seta chega na curva junto com você.',
+            },
+            {
+              title: 'Painel volta mais rápido depois de uma queda',
+              text: 'se a conexão com o painel cair no meio da rota, o app reconecta na hora.',
             },
           ],
         },
@@ -80,26 +111,22 @@ export const APP_SNAPSHOT: AppRelease = {
 };
 
 export const FIRMWARE_SNAPSHOT: FirmwareRelease = {
-  version: '2.1.0',
-  file: 'muse-fw-2.1.0.bin',
-  sizeBytes: 1446912,
-  publishedAt: '2026-10-13T21:38:04Z',
+  version: '2.3.0',
+  file: 'muse-fw-2.3.0.bin',
+  sizeBytes: 1452800,
+  publishedAt: '2026-10-17T15:08:13Z',
   source: 'snapshot',
   changelog: [
     {
-      version: '2.1.0',
-      date: '2026-10-13',
+      version: '2.3.0',
+      date: '2026-10-17',
       groups: [
         {
-          name: 'Novidades',
+          name: 'Melhorias',
           items: [
             {
-              title: 'Estrada sem iluminação',
-              text: 'à noite, num trecho de estrada sem poste, aparece "SEM LUZ" no alto da tela.',
-            },
-            {
-              title: 'Alerta oficial do INMET',
-              text: 'quando a moto entra na área de um aviso meteorológico oficial, o painel mostra "ALERTA" com um triângulo de perigo.',
+              title: 'Brilho da tela',
+              text: 'ao ligar, o painel pede à tela o brilho máximo que ela aceita, para ficar mais forte de dia.',
             },
           ],
         },
