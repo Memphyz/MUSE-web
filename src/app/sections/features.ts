@@ -21,13 +21,49 @@ const FEATURES: readonly Feature[] = [
     icon: 'gauge',
     tone: 'coral',
     title: 'Velocímetro com o limite da via',
-    text: 'A sua velocidade em números grandes. Quando você passa do limite, o número fica vermelho e a placa do limite aparece. O limite vem do mapa e, onde o mapa não diz, do padrão daquele tipo de via.',
+    text: 'A sua velocidade em números grandes. A placa do limite fica ao lado, e quando você passa dele o número fica vermelho. O limite vem do mapa e, onde o mapa não diz, do padrão daquele tipo de via.',
   },
   {
     icon: 'bell',
     tone: 'sun',
-    title: '18 tipos de alerta',
+    title: '19 tipos de alerta',
     text: 'Radar, lombada, pedágio, semáforo, passagem de trem, trecho com acidentes de moto e mais, avisados antes de você chegar, no app e no guidão.',
+  },
+  {
+    icon: 'voice',
+    tone: 'berry',
+    title: 'Voz no fone',
+    text: '"Em 200 metros, vire à esquerda na Avenida Paulista." O app fala as manobras e os alertas no fone ou no intercomunicador, sem internet. Escolha sem som, só alertas ou tudo.',
+  },
+  {
+    icon: 'layers',
+    tone: 'sky',
+    title: 'Mapa em 3D',
+    text: 'Um mapa desenhado para o MUSE, inclinado à frente como no Waze, em 2D ou com o norte para cima. O painel acompanha: o mapa dele também fica em perspectiva.',
+  },
+  {
+    icon: 'vehicle',
+    tone: 'coral',
+    title: 'De moto, de carro ou a pé',
+    text: 'A rota de moto foge das vias proibidas para moto no horário em que você passa por elas. A de carro respeita o rodízio de São Paulo pela sua placa.',
+  },
+  {
+    icon: 'calendar',
+    tone: 'leaf',
+    title: 'Viagem planejada',
+    text: 'Marque a saída para mais tarde, até uma semana à frente. O tempo é o do trânsito de costume naquela hora, o clima é o da hora em que você passa, e o app compara cinco horários de saída.',
+  },
+  {
+    icon: 'lane',
+    tone: 'sky',
+    title: 'Faixa Azul',
+    text: 'Os trechos de Faixa Azul de São Paulo aparecem no mapa, a rota de moto segue pelos corredores, e a prévia diz quanto do caminho é na faixa.',
+  },
+  {
+    icon: 'photo',
+    tone: 'sun',
+    title: 'Veja o destino antes de sair',
+    text: 'Fotos da rua em volta do destino e, onde houver, uma vista em 360° para olhar em volta e andar pela rua. Segure o dedo no mapa para marcar qualquer ponto.',
   },
   {
     icon: 'rain',
@@ -45,7 +81,7 @@ const FEATURES: readonly Feature[] = [
     icon: 'traffic',
     tone: 'coral',
     title: 'Trânsito ao vivo',
-    text: 'O trecho parado aparece em amarelo ou vermelho ao longo da rota, como no Waze, e a hora de chegada leva em conta que a moto passa pelo corredor.',
+    text: 'O trânsito pinta a própria via: laranja quando está lento, vermelho quando está pesado, vinho quando está parado. Vale para todo piloto, sem conta nenhuma, e a hora de chegada conta que a moto passa pelo corredor.',
   },
   {
     icon: 'stops',
@@ -57,7 +93,7 @@ const FEATURES: readonly Feature[] = [
     icon: 'toll',
     tone: 'sun',
     title: 'Pedágio sem cancela',
-    text: 'Nas rodovias com pedágio automático, o app percebe quando você passa e lembra do prazo para pagar, com a placa de cada moto cadastrada.',
+    text: 'Nas rodovias com pedágio automático, o app percebe quando você passa e lembra do prazo para pagar, com a placa de cada veículo cadastrado.',
   },
   {
     icon: 'history',
@@ -69,7 +105,7 @@ const FEATURES: readonly Feature[] = [
     icon: 'cloud',
     tone: 'leaf',
     title: 'Sincroniza com a sua conta Google',
-    text: 'Lugares, rotas salvas, viagens e motos ficam guardados no seu Google Drive. Trocou de celular, está tudo lá. Ninguém mais tem acesso.',
+    text: 'Lugares, rotas salvas, viagens, veículos e o passaporte ficam guardados no seu Google Drive. Trocou de celular, está tudo lá. Ninguém mais tem acesso.',
   },
   {
     icon: 'update',

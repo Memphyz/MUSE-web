@@ -8,6 +8,7 @@ import { Hero } from '../../sections/hero';
 import { HowItWorks } from '../../sections/how-it-works';
 import { OfflineSection } from '../../sections/offline-section';
 import { PanelSection } from '../../sections/panel-section';
+import { PassportSection } from '../../sections/passport-section';
 import { SiteFooter } from '../../sections/site-footer';
 import { SiteHeader } from '../../sections/site-header';
 
@@ -22,6 +23,7 @@ import { SiteHeader } from '../../sections/site-header';
     HowItWorks,
     OfflineSection,
     PanelSection,
+    PassportSection,
     SiteFooter,
     SiteHeader,
   ],
@@ -35,6 +37,7 @@ import { SiteHeader } from '../../sections/site-header';
       <app-alerts-strip />
       <app-panel-section />
       <app-offline-section />
+      <app-passport-section />
       <app-changelog-section />
       <app-download-section />
     </main>

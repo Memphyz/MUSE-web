@@ -18,16 +18,15 @@ import { PhoneFrame, PhoneShot } from '../shared/phone-frame';
 const SHOTS: readonly PhoneShot[] = [
   {
     src: 'assets/shots/route-map.webp',
-    alt: 'Rota traçada no mapa do MUSE, com o trânsito das vias ao redor',
+    alt: 'Rota de moto traçada no mapa do MUSE, com o trânsito pintado nas vias e a chuva no caminho',
   },
   {
     src: 'assets/shots/route.webp',
-    alt: 'Prévia da rota: tempo, distância, riscos nesta rota e o clima no trajeto',
+    alt: 'Prévia da rota: moto, carro ou a pé, fotos da rua do destino e 8,7 km de Faixa Azul nesta rota',
   },
-  { src: 'assets/shots/home.webp', alt: 'Mapa do MUSE com os alertas da via por perto' },
   {
-    src: 'assets/shots/saved.webp',
-    alt: 'Rotas salvas com o retrato de radares, lombadas e semáforos de cada uma',
+    src: 'assets/shots/planned.webp',
+    alt: 'Viagem planejada para terça às 7h30, com o clima de cada horário de saída',
   },
 ];
 
