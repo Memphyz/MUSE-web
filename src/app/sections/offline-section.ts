@@ -36,7 +36,7 @@ import { Icon } from '../shared/icon';
               <span class="stat__label">estados, cada um com os próprios mapas e avisos</span>
             </li>
             <li class="stat" appReveal="100">
-              <span class="stat__value"><app-count-up [value]="18" /></span>
+              <span class="stat__value"><app-count-up [value]="19" /></span>
               <span class="stat__label">tipos de aviso na via, do radar ao animal na pista</span>
             </li>
             <li class="stat" appReveal="200">

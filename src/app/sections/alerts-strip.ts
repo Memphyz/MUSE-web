@@ -8,7 +8,7 @@ interface Alert {
   label: string;
 }
 
-/** The 18 alert types the app knows, with the very icons the panel draws. */
+/** The 19 alert types the app knows, with the very icons the panel draws. */
 const ALERTS: readonly Alert[] = [
   { icon: 'alert_speed_radar', label: 'Radar de velocidade' },
   { icon: 'alert_red_light_radar', label: 'Radar de avanço de sinal' },
@@ -28,6 +28,7 @@ const ALERTS: readonly Alert[] = [
   { icon: 'alert_slippery_road', label: 'Pista escorregadia' },
   { icon: 'alert_unpaved', label: 'Sem asfalto' },
   { icon: 'alert_animal_hazard', label: 'Animais na pista' },
+  { icon: 'alert_biker_monument', label: 'Monumento da Rota Biker' },
 ];
 
 @Component({
@@ -36,7 +37,7 @@ const ALERTS: readonly Alert[] = [
   template: `
     <section class="strip" aria-labelledby="alerts-title">
       <div class="container strip__head" appReveal>
-        <h2 id="alerts-title">Os 18 avisos que o painel conhece</h2>
+        <h2 id="alerts-title">Os 19 avisos que o painel conhece</h2>
         <p>
           Os mesmos ícones que aparecem no mapa do app aparecem no painel, no ponto certo da rota,
           sempre com a distância até eles.
@@ -130,7 +131,7 @@ const ALERTS: readonly Alert[] = [
         justify-content: center;
         padding-inline: var(--gutter);
       }
-      .marquee__track .chip:nth-child(n + 19) {
+      .marquee__track .chip:nth-child(n + 20) {
         display: none;
       }
       .marquee {

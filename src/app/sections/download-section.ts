@@ -85,7 +85,7 @@ import { Icon } from '../shared/icon';
             </ol>
 
             <ul class="requirements" aria-label="Requisitos">
-              <li><app-icon name="phone" [size]="18" /> Android 8.0 ou mais novo</li>
+              <li><app-icon name="phone" [size]="18" /> Android 8.0 ou mais novo, de 64 bits</li>
               <li><app-icon name="bluetooth" [size]="18" /> Bluetooth</li>
               <li><app-icon name="gps" [size]="18" /> GPS</li>
             </ul>

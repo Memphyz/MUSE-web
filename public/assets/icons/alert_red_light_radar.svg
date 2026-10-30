@@ -1,7 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 48 48">
   <path d="M2.88,24A21.12,21.12 0 1 0 45.12,24A21.12,21.12 0 1 0 2.88,24Z" fill="#FFFFFF" stroke="#1D4ED8" stroke-width="5.76"/>
-  <path d="M10.56 17.86L21.31 17.86A2.3 2.3 0 0 1 23.62 20.16L23.62 27.84A2.3 2.3 0 0 1 21.31 30.14L10.56 30.14A2.3 2.3 0 0 1 8.26 27.84L8.26 20.16A2.3 2.3 0 0 1 10.56 17.86Z" fill="none" stroke="#0F172A" stroke-width="3.07" stroke-linecap="butt" stroke-linejoin="round"/>
-  <path d="M23.62 21.7L29.76 19.39L29.76 28.61L23.62 26.3" fill="none" stroke="#0F172A" stroke-width="3.07" stroke-linecap="butt" stroke-linejoin="round"/>
-  <path d="M35.71 15.36L35.71 15.36A3.26 3.26 0 0 1 38.98 18.62L38.98 29.38A3.26 3.26 0 0 1 35.71 32.64L35.71 32.64A3.26 3.26 0 0 1 32.45 29.38L32.45 18.62A3.26 3.26 0 0 1 35.71 15.36Z" fill="none" stroke="#0F172A" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M34.46 19.58A1.25 1.25 0 1 0 36.96 19.58A1.25 1.25 0 1 0 34.46 19.58ZM34.46 24A1.25 1.25 0 1 0 36.96 24A1.25 1.25 0 1 0 34.46 24ZM34.46 28.42A1.25 1.25 0 1 0 36.96 28.42A1.25 1.25 0 1 0 34.46 28.42Z" fill="#0F172A"/>
+  <path d="M13.44 16.32L26.88 16.32A2.88 2.88 0 0 1 29.76 19.2L29.76 28.8A2.88 2.88 0 0 1 26.88 31.68L13.44 31.68A2.88 2.88 0 0 1 10.56 28.8L10.56 19.2A2.88 2.88 0 0 1 13.44 16.32Z" fill="none" stroke="#0F172A" stroke-width="3.07" stroke-linecap="butt" stroke-linejoin="round"/>
+  <path d="M29.76 21.12L37.44 18.24L37.44 29.76L29.76 26.88" fill="none" stroke="#0F172A" stroke-width="3.07" stroke-linecap="butt" stroke-linejoin="round"/>
+  <path d="M43.1 -0.1L43.1 -0.1A5.3 5.3 0 0 1 48.4 5.2L48.4 15.6A5.3 5.3 0 0 1 43.1 20.9L43.1 20.9A5.3 5.3 0 0 1 37.8 15.6L37.8 5.2A5.3 5.3 0 0 1 43.1 -0.1Z" fill="#FFFFFF"/>
+  <path d="M43.1 0.9L43.1 0.9A4.3 4.3 0 0 1 47.4 5.2L47.4 15.6A4.3 4.3 0 0 1 43.1 19.9L43.1 19.9A4.3 4.3 0 0 1 38.8 15.6L38.8 5.2A4.3 4.3 0 0 1 43.1 0.9Z" fill="#0F172A"/>
+  <path d="M40.8 4.07A2.3 2.3 0 1 0 45.4 4.07A2.3 2.3 0 1 0 40.8 4.07Z" fill="#EF4444"/>
+  <path d="M40.8 10.4A2.3 2.3 0 1 0 45.4 10.4A2.3 2.3 0 1 0 40.8 10.4Z" fill="#FACC15"/>
+  <path d="M40.8 16.73A2.3 2.3 0 1 0 45.4 16.73A2.3 2.3 0 1 0 40.8 16.73Z" fill="#22C55E"/>
 </svg>
