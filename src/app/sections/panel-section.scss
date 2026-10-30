@@ -246,3 +246,38 @@
     display: none;
   }
 }
+
+.views {
+  display: inline-flex;
+  gap: 4px;
+  padding: 4px;
+  margin-bottom: 16px;
+  border-radius: var(--radius-pill);
+  background: var(--surface-sunken);
+}
+
+.view {
+  min-height: 48px;
+  padding: 0 20px;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--ink-muted);
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  transition:
+    background var(--dur) ease,
+    color var(--dur) ease,
+    box-shadow var(--dur) ease;
+}
+
+.view:hover:not(.view--active) {
+  color: var(--sky-deep);
+}
+
+.view--active {
+  background: #fff;
+  color: var(--sky-deep);
+  box-shadow: var(--shadow-card);
+}

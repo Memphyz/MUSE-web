@@ -13,130 +13,133 @@
     <clipPath id="panel-map">
       <rect x="0" y="0" width="360" height="204" />
     </clipPath>
+    <filter id="panel-card-shadow" x="-10%" y="-40%" width="120%" height="160%">
+      <feDropShadow dx="0" dy="-9" stdDeviation="9" flood-color="#000" flood-opacity="0.45" />
+    </filter>
+    <filter id="panel-pill-shadow" x="-20%" y="-40%" width="140%" height="200%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#000" flood-opacity="0.45" />
+    </filter>
+    <!-- The firmware recolors the white chip glyphs to the chip's text color -->
+    <filter id="panel-tint-warning">
+      <feFlood flood-color="#fcd34d" />
+      <feComposite in2="SourceAlpha" operator="in" />
+    </filter>
     <radialGradient id="panel-vignette" cx="50%" cy="50%" r="50%">
-      <stop offset="70%" stop-color="#000" stop-opacity="0" />
-      <stop offset="100%" stop-color="#000" stop-opacity="0.55" />
+      <stop offset="78%" stop-color="#000" stop-opacity="0" />
+      <stop offset="100%" stop-color="#000" stop-opacity="0.4" />
     </radialGradient>
-    <linearGradient id="panel-fade" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#0b1220" stop-opacity="0" />
-      <stop offset="1" stop-color="#0b1220" stop-opacity="1" />
-    </linearGradient>
-    <path id="panel-route" d="M180 236 L180 128 Q180 96 212 96 L372 96" />
   </defs>
 
   <g clip-path="url(#panel-glass)">
-    <rect width="360" height="360" class="panel__bg" />
+    <rect width="360" height="360" class="panel__land" />
 
-    <!-- Map band: streets around (0xDE), the route, the next event -->
-    <g clip-path="url(#panel-map)" class="panel__map">
-      <g class="panel__streets">
-        <path d="M-20 60 L400 40" />
-        <path d="M-20 150 L130 150 L200 60" />
-        <path d="M250 -10 L250 180 L400 180" />
-        <path d="M40 -10 L80 120 L0 230" />
-        <path d="M300 -10 L330 120" />
-        <path d="M120 220 L120 140" />
-        <path d="M212 160 L340 230" />
-      </g>
-      <g class="panel__streets panel__streets--secondary">
-        <path d="M-20 100 L160 100" />
-        <path d="M60 -10 L60 200" />
-        <path d="M330 20 L330 230" />
-      </g>
+    <!-- Map: the app's colors, in perspective, with the route always pointing up -->
+    <g clip-path="url(#panel-map)">
+      <path [attr.d]="streets()" class="panel__street" />
+      <path [attr.d]="avenues()" class="panel__avenue" />
 
-      <use href="#panel-route" class="panel__route-casing" />
-      <use href="#panel-route" class="panel__route" />
-      <use href="#panel-route" class="panel__route-flow" />
-
-      @if (eventIcon(); as icon) {
-        <g class="panel__event">
-          @if (scenario() === 'radar') {
-            <circle r="26" class="panel__radar-ring" />
-          }
-          <image [attr.href]="icon" x="-17" y="-17" width="34" height="34" />
-          @if (animated()) {
-            <animateMotion
-              dur="6s"
-              repeatCount="indefinite"
-              keyPoints="1;0"
-              keyTimes="0;1"
-              calcMode="linear"
-            >
-              <mpath href="#panel-route" />
-            </animateMotion>
-          }
-        </g>
+      <path [attr.d]="route()" class="panel__route-casing" />
+      @if (traffic(); as slow) {
+        <path [attr.d]="slow" class="panel__traffic" />
       }
+      <path [attr.d]="route()" class="panel__route" />
 
-      <rect x="0" y="150" width="360" height="56" fill="url(#panel-fade)" />
-    </g>
-
-    <!-- The bike: fixed at the center -->
-    <g class="panel__arrow" transform="translate(180 180)">
-      <path d="M0 -20 L15 16 L0 8 L-15 16 Z" />
-    </g>
-
-    <!-- HUD on top of the map: arrival pill and road-state chips -->
-    <g class="panel__hud">
-      <g transform="translate(180 30)">
-        <rect x="-44" y="-13" width="88" height="26" rx="13" class="panel__pill" />
-        <path d="M-28 -5 L-23 6 L-28 3.5 L-33 6 Z" fill="#ffffff" />
-        <text x="6" y="5" class="panel__pill-text">{{ eta() }}</text>
-      </g>
-      @for (chip of chips(); track chip.text; let i = $index) {
-        <g [attr.transform]="'translate(180 ' + (64 + i * 30) + ')'" class="panel__chip">
-          <rect x="-52" y="-13" width="104" height="26" rx="13" class="panel__pill" />
-          <image [attr.href]="chip.icon" x="-44" y="-9" width="18" height="18" />
-          <text x="6" y="5" class="panel__chip-text">{{ chip.text }}</text>
+      @if (marker(); as m) {
+        <g [attr.transform]="'translate(' + m.x + ' ' + m.y + ')'">
+          @if (m.radar && overLimit()) {
+            <circle r="23" class="panel__pulse" />
+            <circle r="23" class="panel__pulse panel__pulse--late" />
+          }
+          <image [attr.href]="m.icon" x="-19.5" y="-19.5" width="39" height="39" />
         </g>
       }
     </g>
 
-    <!-- Bottom band: speedometer, maneuver, distance, trip -->
-    <g class="panel__band">
-      <g class="panel__speedo">
-        @for (dot of dots; track dot.index) {
-          <circle
-            [attr.cx]="dot.x"
-            [attr.cy]="dot.y"
-            r="3.2"
-            class="panel__dot"
-            [class.panel__dot--lit]="dot.index < litDots()"
-            [class.panel__dot--over]="dot.index < litDots() && dot.index >= limitDot()"
-            [class.panel__dot--limit]="dot.index === limitDot()"
-          />
-        }
-        <text x="86" y="276" class="panel__speed">{{ speed() }}</text>
-        <text x="86" y="296" class="panel__unit">km/h</text>
-        @if (overLimit()) {
-          <g transform="translate(86 212)" class="panel__plate">
-            <circle r="14" fill="#ffffff" stroke="#dc2626" stroke-width="4" />
-            <text y="4.5" class="panel__plate-text">{{ limit() }}</text>
+    <!-- Bottom card: speedometer, maneuver, distance, trip -->
+    <rect
+      x="0"
+      y="204"
+      width="360"
+      height="156"
+      class="panel__card"
+      filter="url(#panel-card-shadow)"
+    />
+
+    <line x1="180" y1="184" x2="180" y2="202" class="panel__trail" />
+    <image href="assets/icons/rider_puck.svg" x="159.5" y="159.5" width="41" height="41" />
+
+    <!-- On top of the map: arrival pill and road-state chips -->
+    <g filter="url(#panel-pill-shadow)">
+      <rect x="132" y="9" width="96" height="31" rx="15.5" class="panel__card" />
+    </g>
+    <path
+      d="M150 18.5a6 6 0 0 0-6 6c0 4.5 6 10 6 10s6-5.5 6-10a6 6 0 0 0-6-6Zm0 4a2 2 0 1 1 0 4 2 2 0 0 1 0-4Z"
+      class="panel__pin"
+    />
+    <text x="192" y="31.5" class="panel__eta">{{ eta() }}</text>
+
+    @for (chip of chips(); track chip.text) {
+      <g [attr.transform]="'translate(' + (180 - chip.width / 2) + ' 45)'">
+        <g class="panel__chip">
+          <g filter="url(#panel-pill-shadow)">
+            <rect
+              x="1"
+              y="1"
+              [attr.width]="chip.width - 2"
+              height="41"
+              rx="20.5"
+              class="panel__chip-box"
+            />
           </g>
-        }
+          <image
+            [attr.href]="chip.icon"
+            x="9"
+            y="5"
+            width="33"
+            height="33"
+            filter="url(#panel-tint-warning)"
+          />
+          <text x="47" y="28" class="panel__chip-text">{{ chip.text }}</text>
+        </g>
       </g>
+    }
 
-      <image
-        [attr.href]="maneuverIcon()"
-        x="150"
-        y="226"
-        width="44"
-        height="44"
-        class="panel__maneuver"
+    @for (dot of dots(); track $index) {
+      <circle
+        [attr.cx]="dot.x"
+        [attr.cy]="dot.y"
+        [attr.r]="dot.r"
+        [class]="'panel__dot panel__dot--' + dot.state"
       />
-      <text x="286" y="268" class="panel__distance" text-anchor="end">{{ distance() }}</text>
-      <text x="292" y="268" class="panel__distance-unit">m</text>
-
-      <text x="118" y="320" class="panel__trip">{{ tripMinutes() }} min</text>
-      <text x="242" y="320" class="panel__trip">{{ tripKm() }} km</text>
-
-      <path d="M 80 315 A 170 170 0 0 0 280 315" class="panel__progress-track" />
-      <path
-        d="M 80 315 A 170 170 0 0 0 280 315"
-        class="panel__progress"
-        [attr.stroke-dasharray]="progressDash()"
-      />
+    }
+    <line
+      [attr.x1]="limitTick.x1"
+      [attr.y1]="limitTick.y1"
+      [attr.x2]="limitTick.x2"
+      [attr.y2]="limitTick.y2"
+      class="panel__tick"
+    />
+    <g transform="translate(80 201)">
+      <circle r="21.5" class="panel__plate" />
+      <text y="7.5" class="panel__plate-text">{{ limit() }}</text>
     </g>
+    <text x="80" y="260" class="panel__speed">{{ speed() }}</text>
+    <text x="80" y="281" class="panel__unit">km/h</text>
+
+    <rect x="143" y="227" width="54" height="54" rx="17" class="panel__maneuver-box" />
+    <image [attr.href]="maneuverIcon()" x="150.5" y="234.5" width="39" height="39" />
+    <!-- prettier-ignore -->
+    <text x="204" y="268" class="panel__distance">{{ distanceLabel() }}<tspan dx="3" class="panel__distance-unit">m</tspan></text>
+
+    <text x="113" y="319" class="panel__trip">{{ tripMinutes() }} min</text>
+    <text x="248" y="319" class="panel__trip">{{ tripKm() }} km</text>
+
+    <path [attr.d]="progressPath" class="panel__progress-track" />
+    <path
+      [attr.d]="progressPath"
+      class="panel__progress"
+      [attr.stroke-dasharray]="progressDash()"
+    />
 
     <circle cx="180" cy="180" r="180" fill="url(#panel-vignette)" pointer-events="none" />
   </g>

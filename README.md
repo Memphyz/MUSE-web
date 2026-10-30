@@ -17,12 +17,18 @@ o app Android direto da release pública.
   deixa um botão na tela para o caso de o navegador bloquear o início
   automático.
 - **O painel simulado** (`src/app/shared/panel-dial.ts`) é uma réplica em
-  SVG da tela redonda do guidão, com velocímetro, manobra, distância e os
-  cenários da via (radar, lombada, chuva, túnel, estrada sem luz), animada
-  com signals e `requestAnimationFrame`.
+  SVG da tela redonda do guidão como o firmware 2.6 a desenha: o mapa com as
+  cores do app, em perspectiva (a mesma projeção de 45° do firmware) ou visto
+  de cima, a seta azul, e o cartão com velocímetro, manobra no quadrado azul e
+  distância. Mostra os cenários da via (radar, lombada, chuva, túnel, estrada
+  sem luz, monumento da Rota Biker, volta à rota), animada com signals e
+  `requestAnimationFrame`. As cores e medidas vêm do `Graphics.cpp` do
+  firmware.
 - Os ícones de alerta, manobra e clima são os mesmos SVGs do firmware
   (`public/assets/icons`, copiados de `MUSE/firmware/assets/icons`). Os
-  prints do app em `public/assets/shots` vieram do aparelho; os renders da
+  prints do app em `public/assets/shots` vieram do aparelho, sem a barra de
+  status, e nunca mostram endereço de casa, conta ou mapa de perto em volta
+  de casa; os renders da
   carcaça são gerados dos STL atuais da pasta de peças (a versão da carcaça
   não aparece na página de propósito).
 

@@ -4,9 +4,9 @@
       <span class="eyebrow"><app-icon name="display" [size]="18" /> O painel</span>
       <h2>Uma tela redonda que só mostra o que importa</h2>
       <p>
-        O mapa em cima; a velocidade, a próxima curva e a distância embaixo. Em preto e branco de
-        propósito, para ler de relance mesmo com sol na tela. Toque numa situação para ver o painel
-        reagir.
+        O mapa em cima, inclinado à frente como o 3D do app, com as mesmas cores do celular.
+        Embaixo, num cartão, a velocidade, a próxima curva e a distância. Toque numa situação para
+        ver o painel reagir.
       </p>
     </header>
 
@@ -14,11 +14,32 @@
       <div class="demo__dial" appReveal="100">
         <app-panel-dial
           [scenario]="active().id"
+          [perspective]="perspective()"
           [label]="'Painel MUSE no cenário ' + active().label"
         />
       </div>
 
       <div class="demo__controls" appReveal="200">
+        <div class="views" role="group" aria-label="Vista do mapa no painel">
+          <button
+            type="button"
+            class="view"
+            [class.view--active]="perspective()"
+            [attr.aria-pressed]="perspective()"
+            (click)="setPerspective(true)"
+          >
+            Em perspectiva
+          </button>
+          <button
+            type="button"
+            class="view"
+            [class.view--active]="!perspective()"
+            [attr.aria-pressed]="!perspective()"
+            (click)="setPerspective(false)"
+          >
+            Visto de cima
+          </button>
+        </div>
         <div class="scenarios" aria-label="Situações do painel">
           @for (scenario of scenarios; track scenario.id) {
             <button
@@ -56,6 +77,13 @@
           <li>
             <app-icon name="moon" [size]="22" />
             <span><strong>Tema claro ou escuro</strong> por horário, escolhido no app</span>
+          </li>
+          <li>
+            <app-icon name="layers" [size]="22" />
+            <span
+              ><strong>Em perspectiva ou visto de cima</strong>, escolhido no app e guardado no
+              painel</span
+            >
           </li>
           <li>
             <app-icon name="update" [size]="22" />
